@@ -2,18 +2,32 @@ import { Modal, Image } from "react-bootstrap";
 import useBebidas from "../hooks/useBebidas";
 
 const ModalBebida = () => {
-    const { modal, modalReceta } = useBebidas();
+    const { modal, modalReceta, receta } = useBebidas();
 
-    const handleModalClick = () => {
-        console.log("holis");
-    };
     return (
         <Modal show={modal} onHide={modalReceta}>
-            <Modal.Body>Modal Prueba</Modal.Body>
+            <Modal.Header closeButton>
+                <Modal.Title className="text-center text-uppercase fw-bold fs-4">
+                    {receta.strDrink}
+                </Modal.Title>
+            </Modal.Header>
             <Image
-                src="https://via.placeholder.com/500x500"
-                alt="Imagen receta"
+                src={receta.strDrinkThumb}
+                alt={`Imagen receta ${receta.strDrink}`}
             />
+            <Modal.Body>
+                <div className="p-3">
+                    <h2 className="fw-bold">Ingredientes</h2>
+                    <p className="fw-bold fs-5">
+                        {receta.strMeasure1}
+                        <span className="fw-bold fs-4">
+                            {receta.strIngredient1}
+                        </span>
+                    </p>
+                    {receta.strIngredient1}
+                    {receta.strInstructions}
+                </div>
+            </Modal.Body>
         </Modal>
     );
 };

@@ -3,7 +3,7 @@ import { Col, Card, Button } from "react-bootstrap";
 import useBebidas from "../hooks/useBebidas";
 
 const Bebida = ({ bebida }) => {
-    const { modalReceta } = useBebidas();
+    const { modalReceta, handleModalClick } = useBebidas();
     return (
         <Col md={5} lg={3}>
             <Card className="mb-4">
@@ -19,6 +19,7 @@ const Bebida = ({ bebida }) => {
                         variant={"warning"}
                         onClick={() => {
                             modalReceta();
+                            handleModalClick(bebida.idDrink);
                         }}
                     >
                         Ver Receta
