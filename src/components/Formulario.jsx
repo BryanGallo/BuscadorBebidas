@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button, Form, Row, Col, Alert } from "react-bootstrap";
 import useCategorias from "../hooks/useCategorias";
 import useBebidas from "../hooks/useBebidas";
-import Bebidas from "./Bebidas";
 
 const Formulario = () => {
     const { categorias } = useCategorias();
@@ -98,7 +97,6 @@ const Formulario = () => {
                     </Button>
                 </Col>
             </Row>
-            {<Bebidas />}
         </Form>
     );
 };
