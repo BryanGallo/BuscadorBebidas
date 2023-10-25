@@ -10,7 +10,7 @@ function App() {
         <CategoriasProvider>
             <BebidasProvider>
                 <header className="py-5">
-                    <h1>BEBIDAS BRYAN</h1>
+                    <h1>BEBIDAS EL BRYAN</h1>
                 </header>
                 <Container className="mt-5">
                     <Formulario />
